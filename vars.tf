@@ -3,7 +3,7 @@ variable "AWS_REGION" {
 }
 
 variable "AMI" {
-  default = "ami-0a6dc7529cd559185"
+  default = "ami-0502e817a62226e03"
 }
 
 variable "AWS_PROFILE" {

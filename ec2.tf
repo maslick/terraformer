@@ -6,4 +6,10 @@ resource "aws_instance" "my-ec2" {
   subnet_id = module.vpc.public_subnets[0]
   key_name = aws_key_pair.my-key.key_name
   iam_instance_profile = aws_iam_instance_profile.profile.name
+
+  user_data = data.template_file.script.rendered
+}
+
+data "template_file" "script" {
+  template = file("scripts/nginx.sh")
 }
